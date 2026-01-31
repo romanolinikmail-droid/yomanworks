@@ -48,6 +48,9 @@ It's all thought out — just throw the model on the print bed and don't bother 
     </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template><img id="lynx" src="lynx.png" alt="lynx">
 
 <script>
+  if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
 const lynx = document.getElementById("lynx");
 
 let mouseX = 0;
@@ -72,7 +75,8 @@ function animate() {
 }
 
 animate();
-window.onload = function() {
+
+window.addEventListener("load", () => {
   window.scrollTo(0, 0);
-};
+});
 </script></grammarly-desktop-integration></html>
