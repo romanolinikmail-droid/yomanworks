@@ -88,9 +88,18 @@ let mouseY = 0;
 let lynxX = 0;
 let lynxY = 0;
 
+let prevMouseX = 0;
+let tilt = 0;
+
 document.addEventListener("mousemove", (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
+
+  const deltaX = mouseX - prevMouseX;
+  prevMouseX = mouseX;
+
+  tilt += deltaX * 0.2;
+  tilt *= 0.85;
 });
 
 function animate() {
@@ -98,7 +107,8 @@ function animate() {
   lynxY += (mouseY - lynxY) * 0.1;
 
   lynx.style.transform =
-    `translate(${lynxX - -40}px, ${lynxY - -20}px)`;
+    `translate(${lynxX - -40}px, ${lynxY - -20}px)
+    rotate(${tilt}deg)`;
 
   requestAnimationFrame(animate);
 }
