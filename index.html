@@ -108,6 +108,9 @@ function animate() {
   lynxX += (mouseX - lynxX) * 0.1;
   lynxY += (mouseY - lynxY) * 0.1;
 
+  tilt *= 0.9;
+  if (Math.abs(tilt) < 0.05) tilt = 0;
+
   lynx.style.transform =
     `translate(${lynxX - -40}px, ${lynxY - -20}px)
     rotate(${tilt}deg)`;
