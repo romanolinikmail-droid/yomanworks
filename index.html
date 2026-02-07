@@ -23,6 +23,42 @@
   top: 0;
   transition: transform 0.15s linear;
 }
+.home-hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-half {
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* desktop */
+@media (min-width: 768px) {
+
+  .home-hero {
+    flex-direction: row;
+  }
+
+  .hero-half {
+    width: 50%;
+    height: calc(100vh + 200px);
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
 </style>    
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,23 +74,14 @@
         <style type="text/css" id="operaUserStyle"></style><link type="image/png" rel="icon" href="favicon.png"><link rel="stylesheet" href="./yomanworks_files/css2(1)"><script src="./yomanworks_files/array.full.min.js.download" async=""></script></head>
   <body data-new-gr-c-s-check-loaded="14.1270.0" data-gr-ext-installed="">
     <div id="root"><div class="bg-[#282828] min-h-screen"><div class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/60 backdrop-blur-sm"><div class="flex items-center justify-center py-4"><img alt="YOMAN WORKS" class="h-12 w-auto" src="./yomanworks_files/9b4f8bacbd3714c975dbac3ac76c5792.png" onclick="window.location.reload();"style="cursor: pointer;"></div></div>
-      <section id="home" class="pt-20 flex flex-col md:flex-row">
+    <section id="home" class="pt-20 home-hero">
 
-  <a href="#projects"
-     class="relative w-full md:w-1/2 h-auto md:h-[calc(100vh+200px)] overflow-hidden cursor-pointer group block">
-
-    <img src="./yomanworks_files/yomanworks_projects.jpg"
-         class="w-full h-auto md:h-full object-contain md:object-cover object-top transition-transform duration-500 md:group-hover:scale-105">
-
+  <a href="#projects" class="hero-half">
+    <img src="./yomanworks_files/yomanworks_projects.jpg" class="hero-img">
   </a>
 
-
-  <a href="#service"
-     class="relative w-full md:w-1/2 h-auto md:h-[calc(100vh+200px)] overflow-hidden cursor-pointer group block">
-
-    <img src="./yomanworks_files/yomanworks_service.jpg"
-         class="w-full h-auto md:h-full object-contain md:object-cover object-top transition-transform duration-500 md:group-hover:scale-105">
-
+  <a href="#service" class="hero-half">
+    <img src="./yomanworks_files/yomanworks_service.jpg" class="hero-img">
   </a>
 
 </section>
