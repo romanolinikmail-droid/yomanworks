@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventory | YOMAN WORKS</title>
+
+<link rel="stylesheet" href="./yomanworks_files/index-Bli7PUCx.css">
+
+<style>
+body {
+  background: #282828;
+  font-family: 'Century Gothic', sans-serif;
+}
+
+.inventory-item {
+  margin-bottom: 60px;
+}
+
+.inventory-item img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.inventory-title {
+  color: #FFD000;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="max-w-6xl mx-auto px-6 py-20">
+
+<h1 class="text-5xl font-bold text-[#FFD000] text-center mb-20">
+INVENTORY
+</h1>
+
+<!-- Tires -->
+
+<div class="inventory-item">
+<div class="inventory-title">2.75-14 TNT J-1218 Offroad</div>
+<img src="images/275-14-tnt.png">
+</div>
+
+<div class="inventory-item">
+<div class="inventory-title">80/90-14 CST C6501 Street</div>
+<img src="images/80-90-14-cst.png">
+</div>
+
+<div class="inventory-item">
+<div class="inventory-title">16" x 3" TOPSTN J802 Offroad</div>
+<img src="images/16x3-topstn.png">
+</div>
+
+<div class="inventory-item">
+<div class="inventory-title">16" x 3" Cordial CY204 Hybrid</div>
+<img src="images/16x3-cordial.png">
+</div>
+
+<div class="inventory-item">
+<div class="inventory-title">3.00-10" Seyoun NJK Offroad</div>
+<img src="images/300-10-seyoun.png">
+</div>
+
+<div class="inventory-item">
+<div class="inventory-title">3.00-10" Chaoyang Hybrid</div>
+<img src="images/300-10-chaoyang.png">
+</div>
+
+<div class="inventory-item">
+<div class="inventory-title">18" x 3" CST C1488 Street</div>
+<img src="images/18x3-cst.png">
+</div>
+
+<div class="inventory-item">
+<div class="inventory-title">16" x 3" CST C1488 Street</div>
+<img src="images/16x3-cst.png">
+</div>
+
+<div class="inventory-item">
+<div class="inventory-title">16" x 2.5" CST C1488 Street</div>
+<img src="images/16x25-cst.png">
+</div>
+
+<div class="inventory-item">
+<div class="inventory-title">16" x 2.125" Chaoyang H5146 Street</div>
+<img src="images/16x2125-chaoyang.png">
+</div>
+
+<hr style="margin:100px 0; border-color:#444;">
+
+<h2 class="text-4xl font-bold text-[#FFD000] mb-10">
+Inner Tubes
+</h2>
+
+<div style="display:flex; gap:40px; align-items:flex-start; flex-wrap:wrap;">
+
+<div style="flex:1; min-width:300px;">
+<img src="images/inner-tubes.png" style="width:100%; border-radius:12px;">
+</div>
+
+<div style="flex:1; min-width:300px; color:white; font-size:22px; line-height:2;">
+16" x 2.125<br>
+16" x 2.5<br>
+16" x 3<br>
+14" x 2.75<br>
+18" x 3
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
