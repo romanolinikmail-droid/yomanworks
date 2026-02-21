@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inventory | YOMAN WORKS</title>
-
 <link rel="stylesheet" href="./yomanworks_files/index-Bli7PUCx.css">
 
 <style>
@@ -12,6 +11,65 @@ body {
   margin: 0;
   background-color: #282828;
   font-family: 'Century Gothic', sans-serif;
+}
+
+#lynx {
+  position: fixed;
+  width: 80px;
+  pointer-events: none;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  transition: transform 0.15s linear;
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.inventory-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
+}
+.inventory-card:hover {
+  transform: scale(1.03);
+}
+
+.inventory-card img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.inventory-info {
+  padding: 1rem;
+  color: #FFD000;
+  text-align: center;
+}
+
+.inventory-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.inventory-available {
+  font-size: 0.95rem;
+  color: #ffffffaa;
+  margin-bottom: 0.5rem;
+}
+
+.inventory-price {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 </style>
 </head>
@@ -21,134 +79,105 @@ body {
 <!-- Top Bar -->
 <div class="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-sm">
   <div class="flex items-center justify-center py-4">
-    <img 
-      src="./yomanworks_files/9b4f8bacbd3714c975dbac3ac76c5792.png"
-      class="h-12 w-auto cursor-pointer"
-      onclick="window.location.href='index.html';"
-      alt="YOMAN WORKS">
+    <img src="./yomanworks_files/9b4f8bacbd3714c975dbac3ac76c5792.png"
+         class="h-12 w-auto cursor-pointer"
+         onclick="window.location.href='index.html';"
+         alt="YOMAN WORKS">
   </div>
 </div>
 
 <!-- Main Content -->
-<div class="pt-32 pb-24 px-6">
+<div class="pt-32 pb-24">
 
-<div class="max-w-6xl mx-auto">
-
-<h1 class="text-5xl font-bold text-[#FFD000] text-center mb-20 tracking-wider">
+<h1 class="text-5xl font-bold text-[#FFD000] text-center mb-12 tracking-wider">
+INVENTORY
 </h1>
 
-<div class="space-y-16">
+<div class="inventory-grid">
 
-<!-- Inventory Items -->
-
-<div class="bg-[#1a1a1a] rounded-lg p-10 max-w-5xl mx-auto">
-  <h3 class="text-3xl font-bold text-[#FFD000] mb-8">14" x 2.75" TNT J-1218 Offroad</h3>
-  <img src="images/14-2.75 TNT J-1218 Offroad yomanworks.png" class="w-full rounded-lg object-contain">
+<!-- Example Item -->
+<div class="inventory-card">
+  <img src="images/14-2.75 TNT J-1218 Offroad yomanworks.png" alt="14-2.75 TNT J-1218 Offroad">
+  <div class="inventory-info">
+    <div class="inventory-title">14" x 2.75" TNT J-1218 Offroad</div>
+    <div class="inventory-available">Available</div>
+    <div class="inventory-price">125 CAD</div>
+  </div>
 </div>
 
-<div class="bg-[#1a1a1a] rounded-lg p-10 max-w-5xl mx-auto">
-  <h3 class="text-3xl font-bold text-[#FFD000] mb-8">80/90-14 CST C6501 Street</h3>
-  <img src="images/80-90-14 CST C6501 Street yomanworks.png" class="w-full rounded-lg object-contain">
+<div class="inventory-card">
+  <img src="images/80-90-14 CST C6501 Street yomanworks.png" alt="80-90-14 CST C6501 Street">
+  <div class="inventory-info">
+    <div class="inventory-title">80/90-14" CST C6501 Street</div>
+    <div class="inventory-available">Available</div>
+    <div class="inventory-price">139 CAD</div>
+  </div>
 </div>
 
-<div class="bg-[#1a1a1a] rounded-lg p-10 max-w-5xl mx-auto">
-  <h3 class="text-3xl font-bold text-[#FFD000] mb-8">16" x 3" TOPSTN J802 Offroad</h3>
-  <img src="images/16-3 TOPSTN J802 Offroad yomanworks.png" class="w-full rounded-lg object-contain">
+<div class="inventory-card">
+  <img src="images/16-3 TOPSTN J802 Offroad yomanworks.png" alt="16-3 TOPSTN J802 Offroad">
+  <div class="inventory-info">
+    <div class="inventory-title">16" x 3" TOPSTN J802 Offroad</div>
+    <div class="inventory-available">Available</div>
+    <div class="inventory-price">142 CAD</div>
+  </div>
 </div>
 
-<div class="bg-[#1a1a1a] rounded-lg p-10 max-w-5xl mx-auto">
-  <h3 class="text-3xl font-bold text-[#FFD000] mb-8">16" x 3" Cordial CY204 Hybrid</h3>
-  <img src="images/16-3 Cordial CY204 Hybrid yomanworks.png" class="w-full rounded-lg object-contain">
+<div class="inventory-card">
+  <img src="images/16-3 Cordial CY204 Hybrid yomanworks.png" alt="16-3 Cordial CY204 Hybrid">
+  <div class="inventory-info">
+    <div class="inventory-title">16" x 3" Cordial CY204 Hybrid</div>
+    <div class="inventory-available">Available</div>
+    <div class="inventory-price">138 CAD</div>
+  </div>
 </div>
 
-<div class="bg-[#1a1a1a] rounded-lg p-10 max-w-5xl mx-auto">
-  <h3 class="text-3xl font-bold text-[#FFD000] mb-8">10" x 3" Seyoun NJK Offroad</h3>
-  <img src="images/10-3 Seyoun NJK Offroad yomanworks.png" class="w-full rounded-lg object-contain">
+<div class="inventory-card">
+  <img src="images/10-3 Seyoun NJK Offroad yomanworks.png" alt="10-3 Seyoun NJK Offroad">
+  <div class="inventory-info">
+    <div class="inventory-title">10" x 3" Seyoun NJK Offroad</div>
+    <div class="inventory-available">Available</div>
+    <div class="inventory-price">115 CAD</div>
+  </div>
 </div>
 
-<div class="bg-[#1a1a1a] rounded-lg p-10 max-w-5xl mx-auto">
-  <h3 class="text-3xl font-bold text-[#FFD000] mb-8">10" x 3" Chaoyang Hybrid</h3>
-  <img src="images/10-3 Chaoyang Hybrid yomanworks.png" class="w-full rounded-lg object-contain">
+<div class="inventory-card">
+  <img src="images/10-3 Chaoyang Hybrid yomanworks.png" alt="10-3 Chaoyang Hybrid">
+  <div class="inventory-info">
+    <div class="inventory-title">10" x 3" Chaoyang Hybrid</div>
+    <div class="inventory-available">Available</div>
+    <div class="inventory-price">119 CAD</div>
+  </div>
 </div>
 
-<div class="bg-[#1a1a1a] rounded-lg p-10 max-w-5xl mx-auto">
-  <h3 class="text-3xl font-bold text-[#FFD000] mb-8">18" x 3" CST C1488 Street</h3>
-  <img src="images/CST C1488 Street yomanworks.png" class="w-full rounded-lg object-contain">
+<!-- додавай інші шини так само -->
 </div>
 
-<div class="bg-[#1a1a1a] rounded-lg p-10 max-w-5xl mx-auto">
-  <h3 class="text-3xl font-bold text-[#FFD000] mb-8">16" x 2.5" CST C1488 Street</h3>
-  <img src="images/CST C1488 Street yomanworks.png" class="w-full rounded-lg object-contain">
-</div>
-
-</div>
-
-<!-- Inner Tubes -->
-
-<div class="mt-24 bg-[#1a1a1a] rounded-lg p-12 max-w-5xl mx-auto">
-
-<h2 class="text-4xl font-bold text-[#FFD000] mb-10">
-Inner Tubes
-</h2>
-
-<div class="grid md:grid-cols-2 gap-12 items-center">
-
-<img src="images/tube yomanworks.png" class="w-full rounded-lg object-contain">
-
-<div class="text-white text-xl leading-loose">
-16" x 2.125<br>
-16" x 2.5<br>
-16" x 3<br>
-14" x 2.75<br>
-18" x 3
-</div>
-
-</div>
-</div>
-
-</div>
 </div>
 
 <!-- Lynx -->
-<img id="lynx" src="lynx.png" alt="lynx"
-     style="position:fixed; width:80px; pointer-events:none; z-index:9999; left:0; top:0; transition:transform 0.15s linear;">
+<img id="lynx" src="lynx.png" alt="lynx">
 
 <script>
 const lynx = document.getElementById("lynx");
-
-let mouseX = 0;
-let mouseY = 0;
-let lynxX = 0;
-let lynxY = 0;
-let prevMouseX = 0;
-let tilt = 0;
-
-document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-
+let mouseX=0, mouseY=0, lynxX=0, lynxY=0, prevMouseX=0, tilt=0;
+document.addEventListener("mousemove", (e)=>{
+  mouseX=e.clientX;
+  mouseY=e.clientY;
   const deltaX = mouseX - prevMouseX;
   prevMouseX = mouseX;
-
-  tilt += deltaX * 0.2;
+  tilt += deltaX*0.2;
   tilt *= 0.85;
-  tilt = Math.max(-45, Math.min(45, tilt));
+  tilt=Math.max(-45, Math.min(45, tilt));
 });
-
-function animate() {
+function animate(){
   lynxX += (mouseX - lynxX) * 0.1;
   lynxY += (mouseY - lynxY) * 0.1;
-
   tilt *= 0.9;
-  if (Math.abs(tilt) < 0.05) tilt = 0;
-
-  lynx.style.transform =
-    `translate(${lynxX - 40}px, ${lynxY - 20}px)
-     rotate(${tilt}deg)`;
-
+  if(Math.abs(tilt)<0.05) tilt=0;
+  lynx.style.transform = `translate(${lynxX - 40}px, ${lynxY - 20}px) rotate(${tilt}deg)`;
   requestAnimationFrame(animate);
 }
-
 animate();
 </script>
 
