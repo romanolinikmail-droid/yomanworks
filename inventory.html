@@ -23,6 +23,29 @@ body {
   transition: transform 0.15s linear;
 }
 
+/* Top bar */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(5px);
+}
+.top-bar img {
+  height: 48px;
+  cursor: pointer;
+  margin: 8px 0;
+}
+
+/* Main content offset from fixed top bar */
+.main-content {
+  padding-top: 96px; /* зроблено відступ зверху, щоб контент не ховався */
+  padding-bottom: 48px;
+}
+
+/* Grid of items */
 .inventory-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -51,13 +74,13 @@ body {
 
 .inventory-info {
   padding: 1rem;
-  color: #FFD000;
   text-align: center;
 }
 
 .inventory-title {
   font-size: 1.25rem;
   font-weight: bold;
+  color: #FFD000;
   margin-bottom: 0.5rem;
 }
 
@@ -70,6 +93,7 @@ body {
 .inventory-price {
   font-size: 1.2rem;
   font-weight: bold;
+  color: #FFD000;
 }
 </style>
 </head>
@@ -77,80 +101,157 @@ body {
 <body>
 
 <!-- Top Bar -->
-<div class="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-sm">
-  <div class="flex items-center justify-center py-4">
+<div class="top-bar">
+  <div class="flex justify-center">
     <img src="./yomanworks_files/9b4f8bacbd3714c975dbac3ac76c5792.png"
-         class="h-12 w-auto cursor-pointer"
          onclick="window.location.href='index.html';"
          alt="YOMAN WORKS">
   </div>
 </div>
 
 <!-- Main Content -->
-<div class="pt-32 pb-24">
+<div class="main-content">
 
 <h1 class="text-5xl font-bold text-[#FFD000] text-center mb-12 tracking-wider">
 INVENTORY
 </h1>
 
+<!-- Tires -->
 <div class="inventory-grid">
+  <div class="inventory-card">
+    <img src="images/14-2.75 TNT J-1218 Offroad yomanworks.png" alt="14-2.75 TNT J-1218 Offroad">
+    <div class="inventory-info">
+      <div class="inventory-title">14" x 2.75" TNT J-1218 Offroad</div>
+      <div class="inventory-available">Available</div>
+      <div class="inventory-price">125 CAD</div>
+    </div>
+  </div>
 
-<!-- Example Item -->
-<div class="inventory-card">
-  <img src="images/14-2.75 TNT J-1218 Offroad yomanworks.png" alt="14-2.75 TNT J-1218 Offroad">
-  <div class="inventory-info">
-    <div class="inventory-title">14" x 2.75" TNT J-1218 Offroad</div>
-    <div class="inventory-available">Available</div>
-    <div class="inventory-price">125 CAD</div>
+  <div class="inventory-card">
+    <img src="images/80-90-14 CST C6501 Street yomanworks.png" alt="80-90-14 CST C6501 Street">
+    <div class="inventory-info">
+      <div class="inventory-title">80/90-14" CST C6501 Street</div>
+      <div class="inventory-available">Available</div>
+      <div class="inventory-price">139 CAD</div>
+    </div>
+  </div>
+
+  <div class="inventory-card">
+    <img src="images/16-3 TOPSTN J802 Offroad yomanworks.png" alt="16-3 TOPSTN J802 Offroad">
+    <div class="inventory-info">
+      <div class="inventory-title">16" x 3" TOPSTN J802 Offroad</div>
+      <div class="inventory-available">Available</div>
+      <div class="inventory-price">142 CAD</div>
+    </div>
+  </div>
+
+  <div class="inventory-card">
+    <img src="images/16-3 Cordial CY204 Hybrid yomanworks.png" alt="16-3 Cordial CY204 Hybrid">
+    <div class="inventory-info">
+      <div class="inventory-title">16" x 3" Cordial CY204 Hybrid</div>
+      <div class="inventory-available">Available</div>
+      <div class="inventory-price">138 CAD</div>
+    </div>
+  </div>
+
+  <div class="inventory-card">
+    <img src="images/10-3 Seyoun NJK Offroad yomanworks.png" alt="10-3 Seyoun NJK Offroad">
+    <div class="inventory-info">
+      <div class="inventory-title">10" x 3" Seyoun NJK Offroad</div>
+      <div class="inventory-available">Available</div>
+      <div class="inventory-price">115 CAD</div>
+    </div>
+  </div>
+
+  <div class="inventory-card">
+    <img src="images/10-3 Chaoyang Hybrid yomanworks.png" alt="10-3 Chaoyang Hybrid">
+    <div class="inventory-info">
+      <div class="inventory-title">10" x 3" Chaoyang Hybrid</div>
+      <div class="inventory-available">Available</div>
+      <div class="inventory-price">119 CAD</div>
+    </div>
+  </div>
+
+  <div class="inventory-card">
+    <img src="images/CST C1488 Street yomanworks.png" alt="18-3 CST C1488 Street">
+    <div class="inventory-info">
+      <div class="inventory-title">18" x 3" CST C1488 Street</div>
+      <div class="inventory-available">Available</div>
+      <div class="inventory-price">145 CAD</div>
+    </div>
+  </div>
+
+  <div class="inventory-card">
+    <img src="images/CST C1488 Street yomanworks.png" alt="16-3 CST C1488 Street">
+    <div class="inventory-info">
+      <div class="inventory-title">16" x 3" CST C1488 Street</div>
+      <div class="inventory-available">Available</div>
+      <div class="inventory-price">140 CAD</div>
+    </div>
+  </div>
+
+  <div class="inventory-card">
+    <img src="images/CST C1488 Street yomanworks.png" alt="16-2.5 CST C1488 Street">
+    <div class="inventory-info">
+      <div class="inventory-title">16" x 2.5" CST C1488 Street</div>
+      <div class="inventory-available">Available</div>
+      <div class="inventory-price">132 CAD</div>
+    </div>
+  </div>
+
+  <div class="inventory-card">
+    <img src="images/16-2.125 Chaoyang H5146 Street yomanworks.png" alt="16-2.125 Chaoyang H5146 Street">
+    <div class="inventory-info">
+      <div class="inventory-title">16" x 2.125" Chaoyang H5146 Street</div>
+      <div class="inventory-available">Available</div>
+      <div class="inventory-price">130 CAD</div>
+    </div>
   </div>
 </div>
 
-<div class="inventory-card">
-  <img src="images/80-90-14 CST C6501 Street yomanworks.png" alt="80-90-14 CST C6501 Street">
-  <div class="inventory-info">
-    <div class="inventory-title">80/90-14" CST C6501 Street</div>
-    <div class="inventory-available">Available</div>
-    <div class="inventory-price">139 CAD</div>
+<!-- Inner Tubes -->
+<h2 class="text-4xl font-bold text-[#FFD000] text-center mt-16 mb-8 tracking-wider">INNER TUBES</h2>
+<div class="inventory-grid">
+  <div class="inventory-card">
+    <img src="images/tube yomanworks.png" alt="16x2.125 Tube">
+    <div class="inventory-info">
+      <div class="inventory-title">16" x 2.125</div>
+      <div class="inventory-available">Available</div>
+      <div class="inventory-price">25 CAD</div>
+    </div>
   </div>
-</div>
-
-<div class="inventory-card">
-  <img src="images/16-3 TOPSTN J802 Offroad yomanworks.png" alt="16-3 TOPSTN J802 Offroad">
-  <div class="inventory-info">
-    <div class="inventory-title">16" x 3" TOPSTN J802 Offroad</div>
-    <div class="inventory-available">Available</div>
-    <div class="inventory-price">142 CAD</div>
+  <div class="inventory-card">
+    <img src="images/tube yomanworks.png" alt="16x2.5 Tube">
+    <div class="inventory-info">
+      <div class="inventory-title">16" x 2.5</div>
+      <div class="inventory-available">Available</div>
+      <div class="inventory-price">28 CAD</div>
+    </div>
   </div>
-</div>
-
-<div class="inventory-card">
-  <img src="images/16-3 Cordial CY204 Hybrid yomanworks.png" alt="16-3 Cordial CY204 Hybrid">
-  <div class="inventory-info">
-    <div class="inventory-title">16" x 3" Cordial CY204 Hybrid</div>
-    <div class="inventory-available">Available</div>
-    <div class="inventory-price">138 CAD</div>
+  <div class="inventory-card">
+    <img src="images/tube yomanworks.png" alt="16x3 Tube">
+    <div class="inventory-info">
+      <div class="inventory-title">16" x 3</div>
+      <div class="inventory-available">Available</div>
+      <div class="inventory-price">30 CAD</div>
+    </div>
   </div>
-</div>
-
-<div class="inventory-card">
-  <img src="images/10-3 Seyoun NJK Offroad yomanworks.png" alt="10-3 Seyoun NJK Offroad">
-  <div class="inventory-info">
-    <div class="inventory-title">10" x 3" Seyoun NJK Offroad</div>
-    <div class="inventory-available">Available</div>
-    <div class="inventory-price">115 CAD</div>
+  <div class="inventory-card">
+    <img src="images/tube yomanworks.png" alt="14x2.75 Tube">
+    <div class="inventory-info">
+      <div class="inventory-title">14" x 2.75</div>
+      <div class="inventory-available">Available</div>
+      <div class="inventory-price">22 CAD</div>
+    </div>
   </div>
-</div>
-
-<div class="inventory-card">
-  <img src="images/10-3 Chaoyang Hybrid yomanworks.png" alt="10-3 Chaoyang Hybrid">
-  <div class="inventory-info">
-    <div class="inventory-title">10" x 3" Chaoyang Hybrid</div>
-    <div class="inventory-available">Available</div>
-    <div class="inventory-price">119 CAD</div>
+  <div class="inventory-card">
+    <img src="images/tube yomanworks.png" alt="18x3 Tube">
+    <div class="inventory-info">
+      <div class="inventory-title">18" x 3</div>
+      <div class="inventory-available">Available</div>
+      <div class="inventory-price">32 CAD</div>
+    </div>
   </div>
-</div>
-
-<!-- додавай інші шини так само -->
 </div>
 
 </div>
