@@ -56,30 +56,6 @@
     height: calc(100vh + 200px);
   }
 }
-   .slider {
-  position: relative;
-}
-
-.slide {
-  position: absolute;
-  inset: 0;
-}
-
-.slide.hidden {
-  display: none;
-}
-
-.slider button {
-  background: rgba(0,0,0,0.4);
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  transition: 0.3s;
-}
-
-.slider button:hover {
-  background: rgba(0,0,0,0.7);
-}
 </style>    
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -125,33 +101,7 @@
 <p class="text-center text-gray-400 text-lg mt-4 mb-16 font-['Century_Gothic',sans-serif]">
   EUC upgrades ·  Design & 3D printing
 </p>
-  <div class="w-full max-w-6xl mx-auto mb-16"><div class="bg-[#1a1a1a] rounded-lg overflow-hidden">
-    <div class="relative w-full h-[500px] overflow-hidden group slider" data-slider="cutoff">
-
-  <img src="./yomanworks_files/Leaperkim Headlight Cutoff slideshow 1.jpg"
-       class="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105 slide active">
-
-  <img src="./yomanworks_files/Leaperkim Headlight Cutoff slideshow 2.jpg"
-       class="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105 slide hidden">
-
-  <img src="./yomanworks_files/Leaperkim Headlight Cutoff slideshow 3.jpg"
-       class="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105 slide hidden">
-
-  <img src="./yomanworks_files/Leaperkim Headlight Cutoff slideshow 4.jpg"
-       class="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105 slide hidden">
-
-  <!-- Left arrow -->
-  <button class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10 slider-prev">
-    &#10094;
-  </button>
-
-  <!-- Right arrow -->
-  <button class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10 slider-next">
-    &#10095;
-  </button>
-
-</div>
-    <div class="p-8"><h3 class="text-3xl font-bold text-[#FFD000] mb-6">Leaperkim Headlight Cutoff</h3><div class="text-gray-300 text-base leading-relaxed mb-8 whitespace-pre-line font-[&#39;Century_Gothic&#39;,sans-serif]">Stop annoying riders and pedestrians with your stock headlight — install my cutoff and people will stop turning away from you.
+  <div class="w-full max-w-6xl mx-auto mb-16"><div class="bg-[#1a1a1a] rounded-lg overflow-hidden"><div class="relative w-full overflow-hidden group"><img alt="Leaperkim Headlight Cutoff" class="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105" src="./yomanworks_files/cb96ace45890b9fd8c3dd0065fef36ce.jpeg"></div><div class="p-8"><h3 class="text-3xl font-bold text-[#FFD000] mb-6">Leaperkim Headlight Cutoff</h3><div class="text-gray-300 text-base leading-relaxed mb-8 whitespace-pre-line font-[&#39;Century_Gothic&#39;,sans-serif]">Stop annoying riders and pedestrians with your stock headlight — install my cutoff and people will stop turning away from you.
 
 Thanks to its design, the cutoff shroud shapes a clean, controlled beam without using any lenses.
 
@@ -236,36 +186,7 @@ Onewheel servicing, including tire and bearing replacements.
 
     </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template><img id="lynx" src="lynx.png" alt="lynx">
 
-    <script>
-document.querySelectorAll(".slider").forEach(slider => {
-
-  const slides = slider.querySelectorAll(".slide");
-  const nextBtn = slider.querySelector(".slider-next");
-  const prevBtn = slider.querySelector(".slider-prev");
-
-  let index = 0;
-
-  function showSlide(i) {
-    slides.forEach(slide => slide.classList.add("hidden"));
-    slides[i].classList.remove("hidden");
-  }
-
-  nextBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    index = (index + 1) % slides.length;
-    showSlide(index);
-  });
-
-  prevBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    index = (index - 1 + slides.length) % slides.length;
-    showSlide(index);
-  });
-
-});
-</script>
-    
-    <script>
+<script>
   if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
