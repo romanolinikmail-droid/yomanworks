@@ -56,6 +56,42 @@
     height: calc(100vh + 200px);
   }
 }
+   .project-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-slider-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.project-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.project-slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #FFD000;
+  border: none;
+  font-size: 28px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s ease;
+}
+
+.project-slider button:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.project-prev { left: 10px; }
+.project-next { right: 10px; }
 </style>    
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -101,7 +137,36 @@
 <p class="text-center text-gray-400 text-lg mt-4 mb-16 font-['Century_Gothic',sans-serif]">
   EUC upgrades ·  Design & 3D printing
 </p>
-  <div class="w-full max-w-6xl mx-auto mb-16"><div class="bg-[#1a1a1a] rounded-lg overflow-hidden"><div class="relative w-full overflow-hidden group"><img alt="Leaperkim Headlight Cutoff" class="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105" src="./yomanworks_files/cb96ace45890b9fd8c3dd0065fef36ce.jpeg"></div><div class="p-8"><h3 class="text-3xl font-bold text-[#FFD000] mb-6">Leaperkim Headlight Cutoff</h3><div class="text-gray-300 text-base leading-relaxed mb-8 whitespace-pre-line font-[&#39;Century_Gothic&#39;,sans-serif]">Stop annoying riders and pedestrians with your stock headlight — install my cutoff and people will stop turning away from you.
+  <div class="w-full max-w-6xl mx-auto mb-16"><div class="bg-[#1a1a1a] rounded-lg overflow-hidden"><div class="project-slider group">
+
+  <div class="project-slider-track">
+
+    <div class="project-slide">
+      <img src="yomanworks_files/cb96ace45890b9fd8c3dd0065fef36ce.jpeg" class="w-full h-full object-cover object-top">
+    </div>
+
+    <div class="project-slide">
+      <img src="yomanworks_files/Leaperkim Headlight Cutoff slideshow 1.jpg" class="w-full h-full object-cover object-top">
+    </div>
+
+    <div class="project-slide">
+      <img src="yomanworks_files/Leaperkim Headlight Cutoff slideshow 2.jpg" class="w-full h-full object-cover object-top">
+    </div>
+
+    <div class="project-slide">
+      <img src="yomanworks_files/Leaperkim Headlight Cutoff slideshow 3.jpg" class="w-full h-full object-cover object-top">
+    </div>
+
+    <div class="project-slide">
+      <img src="yomanworks_files/Leaperkim Headlight Cutoff slideshow 4.jpg" class="w-full h-full object-cover object-top">
+    </div>
+
+  </div>
+
+  <button class="project-prev">&#10094;</button>
+  <button class="project-next">&#10095;</button>
+
+</div><div class="p-8"><h3 class="text-3xl font-bold text-[#FFD000] mb-6">Leaperkim Headlight Cutoff</h3><div class="text-gray-300 text-base leading-relaxed mb-8 whitespace-pre-line font-[&#39;Century_Gothic&#39;,sans-serif]">Stop annoying riders and pedestrians with your stock headlight — install my cutoff and people will stop turning away from you.
 
 Thanks to its design, the cutoff shroud shapes a clean, controlled beam without using any lenses.
 
@@ -233,4 +298,31 @@ animate();
 window.addEventListener("load", () => {
   window.scrollTo(0, 0);
 });
-</script></grammarly-desktop-integration></html>
+</script>
+  <script>
+document.querySelectorAll(".project-slider").forEach(slider => {
+
+  const track = slider.querySelector(".project-slider-track");
+  const slides = slider.querySelectorAll(".project-slide");
+  const prevBtn = slider.querySelector(".project-prev");
+  const nextBtn = slider.querySelector(".project-next");
+
+  let index = 0;
+
+  function updateSlider() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    index = (index + 1) % slides.length;
+    updateSlider();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlider();
+  });
+
+});
+</script>
+  </grammarly-desktop-integration></html>
