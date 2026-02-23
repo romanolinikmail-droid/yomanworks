@@ -439,25 +439,21 @@ document.querySelectorAll(".project-slider").forEach(slider => {
 
 });
 </script>
- <script>
-document.addEventListener("DOMContentLoaded", function () {
+<script>
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
 
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImg");
+document.addEventListener("click", function (e) {
 
-  const serviceImages = document.querySelectorAll("#service .grid img");
+  const img = e.target.closest("#service .grid img");
+  if (!img) return;
 
-  serviceImages.forEach(img => {
-    img.addEventListener("click", function () {
-      modal.style.display = "flex";
-      modalImg.src = this.src;
-    });
-  });
+  modal.style.display = "flex";
+  modalImg.src = img.src;
+});
 
-  modal.addEventListener("click", function () {
-    modal.style.display = "none";
-  });
-
+modal.addEventListener("click", function () {
+  modal.style.display = "none";
 });
 </script>
   </grammarly-desktop-integration></html>
