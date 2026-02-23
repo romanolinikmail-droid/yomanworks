@@ -348,7 +348,21 @@ Onewheel servicing, including tire and bearing replacements.
   
   <p>© 2026 YOMAN WORKS. All rights reserved.</p></div></div></section></div></div>
   
-
+  <div id="imageModal" style="
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+">
+  <img id="modalImg" style="
+    max-width:90%;
+    max-height:90%;
+  ">
+</div>
+  
     </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template><img id="lynx" src="lynx.png" alt="lynx">
 
 <script>
@@ -423,6 +437,21 @@ document.querySelectorAll(".project-slider").forEach(slider => {
     updateSlider();
   });
 
+});
+</script>
+  <script>
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+
+document.querySelectorAll("#service img").forEach(img => {
+  img.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+  });
+});
+
+modal.addEventListener("click", () => {
+  modal.style.display = "none";
 });
 </script>
   </grammarly-desktop-integration></html>
