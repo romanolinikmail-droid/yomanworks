@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WheelTool | YOMAN WORKS</title>
+<link rel="stylesheet" href="./yomanworks_files/index-Bli7PUCx.css">
+<style>
+body {
+  margin: 0;
+  background-color: #282828;
+  font-family: 'Century Gothic', sans-serif;
+}
+#lynx {
+  position: fixed;
+  width: 80px;
+  pointer-events: none;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  transition: transform 0.15s linear;
+}
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(5px);
+}
+.top-bar img {
+  height: 48px;
+  cursor: pointer;
+  margin: 8px 0;
+}
+.main-content {
+  padding-top: 96px;
+  padding-bottom: 48px;
+  min-height: 100vh;
+}
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <div class="flex justify-center">
+    <img src="./yomanworks_files/9b4f8bacbd3714c975dbac3ac76c5792.png"
+         onclick="window.location.href='index.html';"
+         alt="YOMAN WORKS">
+  </div>
+</div>
+
+<div class="main-content"></div>
+
+<img id="lynx" src="lynx.png" alt="lynx">
+
+<script>
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+const lynx = document.getElementById("lynx");
+let mouseX = 0, mouseY = 0, lynxX = 0, lynxY = 0, prevMouseX = 0, tilt = 0;
+
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  const deltaX = mouseX - prevMouseX;
+  prevMouseX = mouseX;
+  tilt += deltaX * 0.2;
+  tilt *= 0.85;
+  tilt = Math.max(-45, Math.min(45, tilt));
+});
+
+function animate() {
+  lynxX += (mouseX - lynxX) * 0.1;
+  lynxY += (mouseY - lynxY) * 0.1;
+  tilt *= 0.9;
+  if (Math.abs(tilt) < 0.05) tilt = 0;
+  lynx.style.transform =
+    `translate(${lynxX - -40}px, ${lynxY - -20}px) rotate(${tilt}deg)`;
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
+</body>
+</html>
