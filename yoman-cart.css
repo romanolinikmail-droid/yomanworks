@@ -1,0 +1,72 @@
+/* WheelTool Shopify modal */
+.shopify-cart-overlay{
+  position:fixed; inset:0; z-index:10000; display:none;
+  align-items:center; justify-content:center; padding:20px;
+  background:rgba(0,0,0,.72); backdrop-filter:blur(8px); box-sizing:border-box;
+}
+.shopify-cart-overlay.is-open{display:flex}
+.shopify-cart-modal{
+  width:min(92vw,560px); background:#111; border:1px solid rgba(255,208,0,.28);
+  border-radius:18px; box-shadow:0 24px 80px rgba(0,0,0,.55); overflow:hidden;
+  font-family:'Century Gothic','Trebuchet MS',Arial,sans-serif;
+}
+.shopify-cart-head{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:20px 22px; border-bottom:1px solid rgba(255,255,255,.08);
+}
+.wheeltool-modal-logo{display:block;width:190px;max-width:52vw;height:auto}
+.shopify-cart-close{
+  width:38px;height:38px;border:0;border-radius:8px;background:#2a2a2a;color:#fff;
+  font-size:24px;line-height:1;cursor:pointer
+}
+.shopify-cart-body{padding:22px}
+.shopify-cart-product{display:grid;grid-template-columns:92px 1fr;gap:18px;align-items:center}
+.shopify-cart-product img{width:92px;height:92px;object-fit:cover;border-radius:12px;background:#242424}
+.shopify-cart-name{margin:0 0 6px;color:#fff;font-size:22px;font-weight:700}
+.shopify-cart-price{margin:0;color:#cfcfcf;font-size:16px}
+.shopify-cart-row{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08)
+}
+.shopify-cart-label{color:#ddd;font-size:15px}
+.quantity-control{display:inline-flex;align-items:center;overflow:hidden;border:1px solid rgba(255,255,255,.16);border-radius:10px}
+.quantity-control button{width:42px;height:42px;border:0;background:#242424;color:#fff;font-size:22px;cursor:pointer}
+.quantity-control input{
+  width:54px;height:42px;padding:0;border:0;outline:0;background:#111;color:#fff;
+  text-align:center;font:700 16px 'Century Gothic','Trebuchet MS',Arial,sans-serif;-moz-appearance:textfield
+}
+.quantity-control input::-webkit-outer-spin-button,.quantity-control input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.shopify-cart-total{color:#FFD000;font-size:23px;font-weight:800}
+.shopify-checkout-button{
+  width:100%;margin-top:22px;padding:15px 20px;border:0;border-radius:10px;
+  background:#FFD000;color:#282828;font:800 17px 'Century Gothic','Trebuchet MS',Arial,sans-serif;cursor:pointer
+}
+.shopify-checkout-button:hover{background:#ffdb33}
+.shopify-checkout-button:disabled{cursor:wait;opacity:.7}
+.shopify-cart-note{margin:13px 0 0;color:#969696;font-size:12px;line-height:1.5;text-align:center}
+.shopify-cart-error{display:none;margin:14px 0 0;padding:10px 12px;border-radius:8px;background:rgba(190,40,40,.18);color:#ffb4b4;font-size:13px}
+@media(max-width:560px){
+  .shopify-cart-product{grid-template-columns:74px 1fr}
+  .shopify-cart-product img{width:74px;height:74px}
+  .shopify-cart-row{gap:10px}
+}
+
+
+/* Shared multi-product cart on homepage */
+.yoman-cart-fab{position:fixed;right:22px;top:76px;z-index:7000;background:#FFD000;color:#181818;border:0;border-radius:50px;padding:12px 17px;cursor:pointer;font-weight:800;box-shadow:0 10px 30px #0008;font-size:16px}
+.yoman-cart-fab span{display:inline-flex;align-items:center;justify-content:center;background:#181818;color:#FFD000;min-width:23px;height:23px;border-radius:25px;margin-left:5px;padding:0 4px}
+#shopify-cart-items{max-height:52vh;overflow:auto}
+.yoman-cart-line{display:grid;grid-template-columns:74px 1fr auto;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid #ffffff20;color:#fff;text-align:left}
+.yoman-cart-line img{width:74px;height:74px;object-fit:contain;border-radius:10px;background:#222}
+.yoman-cart-line-name{font-weight:700;font-size:16px;margin-bottom:6px}
+.yoman-cart-line-price{color:#c7c7c7;font-size:13px}
+.yoman-cart-line .quantity-control{margin-top:9px}
+.yoman-cart-line .quantity-control button{width:30px;height:30px}
+.yoman-cart-line .quantity-control input{width:36px;height:30px}
+.yoman-cart-line-remove{display:block;margin-top:9px;background:none;border:0;color:#ffadad;cursor:pointer;padding:3px 0;text-decoration:underline;font-size:12px}
+.yoman-cart-empty{color:#ccc;text-align:center;padding:24px 0}
+.yoman-cart-line-total{font-weight:700;white-space:nowrap;color:#FFD000;font-size:14px}
+@media(max-width:530px){.yoman-cart-line{grid-template-columns:56px 1fr;gap:10px}.yoman-cart-line img{width:56px;height:56px}.yoman-cart-line-total{grid-column:2;justify-self:start}.yoman-cart-fab{right:12px;top:68px;padding:10px 13px}}
+
+
+.shopify-cart-head h2{margin:0;color:#FFD000;font-size:24px}.yoman-cart-line>*{min-width:0}.shopify-cart-modal{max-height:92vh;overflow:auto}.yoman-cart-line-name{overflow-wrap:anywhere}
